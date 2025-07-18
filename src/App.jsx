@@ -9,10 +9,6 @@ function App() {
   // const [count, setCount] = useState(0) 
 
   return (
-<<<<<<< HEAD
-    <> 
-     
-=======
     <>
      hhjjjjjj
      <BrowserRouter>
@@ -21,7 +17,6 @@ function App() {
      </Routes>
      </BrowserRouter> 
 
->>>>>>> 9d822005c8e347b7b5a6db819cc374f8eb28d4a4
     </>
   )
 }
