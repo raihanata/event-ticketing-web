@@ -3,9 +3,7 @@ import React from 'react'
 const Header = () => {
 
   return (
-    <div>hello
-        gkjgfy
-    </div>
+    <div>header</div>
   )
 }
 
