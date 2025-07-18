@@ -17,9 +17,10 @@ function App() {
      <Routes>
       <Route path='/' element={<Home/>}/>
      </Routes>
-     </BrowserRouter> 
-<Footer/>
+     </BrowserRouter>
+     <Footer/>
     </>
+    
   )
 }
 
