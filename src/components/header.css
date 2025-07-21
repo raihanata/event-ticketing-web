@@ -37,10 +37,11 @@
    
 background-image: url('../images/banner.png');
 min-height: 500px;
+background-repeat: none;
 
  }
  .bannerdiv{
     display: flex;
-    
+
  }
 
