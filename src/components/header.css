@@ -35,7 +35,7 @@
      border-radius: 25px;
      font-family: 'DM Sans', sans-serif;
      font-size: medium;
-    border-color: white;
+   border:1px solid white
    
     
 
@@ -61,8 +61,8 @@
 
  .bannerleft {
 
-     max-width: 500px;
-     min-height: 500px;
+     max-width: 600px;
+     min-height: 476px;
      padding-top: 30px;
  }
 
@@ -74,25 +74,37 @@
 
  .bannerright h3 {
      font-family: 'Proxima Nova', sans-serif;
-    
+    max-width: 360px;
+    min-height: 94px;
+  font-size: xx-large;
+  font-weight: lighter;
+    word-spacing: 5px;
  }
 
  .bannerright p {
      font-family: 'Proxima Nova', sans-serif;
-   padding-top: 30px;
+     font-size: 18px;
+   padding-top: 20px;
     padding-bottom: 30px;
+    max-width: 420px;
     
  }
 
  .bannerright button {
      width: 150px;
-     min-height: 60px;
-     border-radius: 25px;
+     min-height: 50px;
+     border-radius: 30px;
      font-family: 'DM Sans', sans-serif;
      font-size: 18px;
-     background-color: #F5167E
+     background-color: #F5167E;
+     border: none;
+    margin-right: 10px;
+    color: white;
  }
-
+.btnleanmore{
+    background-color: transparent;
+    border: 1px solid rgb(250, 246, 246);
+}
  .bannerright {
      padding-top: 80px;
      text-align: justify;

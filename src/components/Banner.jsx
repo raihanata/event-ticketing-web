@@ -13,7 +13,7 @@ const Banner = () => {
        
         <p>Look no further! Our SBS The Show tickets are the simplest way for you to experience a live Kpop recording.</p>
         <button>Get Ticket</button>
-        <button>Learn Mor</button>
+        <button className='btnleanmore' >Learn More</button>
         </div >
         </div>
    </section>
