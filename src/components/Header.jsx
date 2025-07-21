@@ -6,12 +6,13 @@ import imgUrl from '../assets/images/logo.png'
 const Header = () => {
 
     return (
-        <header >
+        <header>
             <div className="container">
                
                <nav id='nav'>
                <div className='logo'><img src={imgUrl} alt='' /></div>
                 <ul>
+                    
                     
                     <li class="navitems"><a href="">Schedule</a></li>
                     <li class="navitems"><a href="">Speakers</a></li>
