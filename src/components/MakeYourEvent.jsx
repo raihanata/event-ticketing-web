@@ -2,7 +2,9 @@ import React from 'react'
 
 const MakeYourEvent = () => {
   return (
-    <div>MakeYourEvent</div>
+    <div>
+      
+    </div>
   )
 }
 
