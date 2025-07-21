@@ -1,0 +1,46 @@
+ nav a {
+     text-decoration: none;
+ }
+
+ nav {
+     display: flex;
+     justify-content: space-between;
+     font-family: 'DM Sans', sans-serif;
+     font-size: medium;
+     font-weight: 16px;
+     padding-top: 20px;
+ }
+
+ nav ul {
+     flex: 70%;
+     display: flex;
+     justify-content: space-evenly;
+     list-style-type: none;
+
+ }
+
+ .logo {
+     flex: 30%;
+ }
+
+ nav button {
+     font-family: 'DM Sans', sans-serif;
+     padding: 2px 20px;
+     border-radius: 18px;
+    font-size: medium;
+     font-weight: 16px;
+     background-color:white;
+
+ }
+ /* banner css */
+ #banner{
+   
+background-image: url('../images/banner.png');
+min-height: 500px;
+
+ }
+ .bannerdiv{
+    display: flex;
+    
+ }
+
