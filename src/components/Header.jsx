@@ -4,7 +4,6 @@ import '../components/header.css'
 
 const Header = () => {
 
-<<<<<<< HEAD
     return (
         <header>
             <div className="container">
@@ -25,11 +24,6 @@ const Header = () => {
             </div>
         </header>
     )
-=======
-  return (
-    <div></div>
-  )
->>>>>>> c0dd8b731a211c951e2f40744ef294b1edf8a00d
 }
 
 export default Header
