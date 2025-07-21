@@ -1,5 +1,10 @@
+ header{
+    position: absolute;
+    width: 100%;
+ }
  nav a {
      text-decoration: none;
+     color: white;
  }
 
  nav {
@@ -9,6 +14,7 @@
      font-size: medium;
      font-weight: 16px;
      padding-top: 20px;
+     align-items: center;
  }
 
  nav ul {
@@ -16,32 +22,78 @@
      display: flex;
      justify-content: space-evenly;
      list-style-type: none;
-
+    align-items: center;
  }
 
  .logo {
      flex: 30%;
  }
 
- nav button {
+ nav button{
+      width: 110px;
+     min-height: 50px;
+     border-radius: 25px;
      font-family: 'DM Sans', sans-serif;
-     padding: 2px 20px;
-     border-radius: 18px;
-    font-size: medium;
-     font-weight: 16px;
-     background-color:white;
-
- }
- /* banner css */
- #banner{
+     font-size: medium;
+    border-color: white;
    
-background-image: url('../images/banner.png');
-min-height: 500px;
-background-repeat: none;
-
- }
- .bannerdiv{
-    display: flex;
+    
 
  }
 
+ /* banner css */
+ #banner {
+
+     background-image: url('../assets/images/banner.png');
+     min-height: 500px;
+     background-repeat: no-repeat;
+     background-size: cover;
+     padding-top: 70px;
+     color: white;
+ }
+
+ .bannerdiv {
+     display: flex;
+     justify-content: space-between;
+     padding-top: 30px;
+
+ }
+
+ .bannerleft {
+
+     max-width: 500px;
+     min-height: 500px;
+     padding-top: 30px;
+ }
+
+ .bannerleft img {
+     object-fit: contain;
+     width: 100%;
+
+ }
+
+ .bannerright h3 {
+     font-family: 'Proxima Nova', sans-serif;
+    
+ }
+
+ .bannerright p {
+     font-family: 'Proxima Nova', sans-serif;
+   padding-top: 30px;
+    padding-bottom: 30px;
+    
+ }
+
+ .bannerright button {
+     width: 150px;
+     min-height: 60px;
+     border-radius: 25px;
+     font-family: 'DM Sans', sans-serif;
+     font-size: 18px;
+     background-color: #F5167E
+ }
+
+ .bannerright {
+     padding-top: 80px;
+     text-align: justify;
+ }

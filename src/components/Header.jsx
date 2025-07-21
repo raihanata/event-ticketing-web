@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import '../components/header.css'
+import imgUrl from '../assets/images/logo.png'
 
 const Header = () => {
 
@@ -9,7 +10,7 @@ const Header = () => {
             <div className="container">
                
                <nav id='nav'>
-               <div className='logo'><img src="" alt="" />bbbbbffg</div>
+               <div className='logo'><img src={imgUrl} alt='' /></div>
                 <ul>
                     
                     <li class="navitems"><a href="">Schedule</a></li>
