@@ -1,6 +1,6 @@
 import React from 'react'
  import './Footer.css';
- import imgurl from '../assets/images/logo_360.png';
+ import imgurl from '../assets/images/logo.png';
 const Footer = () => {
   return (
     <footer id='footer1'>
