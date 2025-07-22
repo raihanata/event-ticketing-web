@@ -165,4 +165,9 @@ color: blue;
 border: 1px solid blue;
   margin-bottom: 30px;
  }
+ /* make your own event section css */
+ .makeevent{
+    background-color:#EEE1FF ;
+    min-height: 252px;
  
+ }
