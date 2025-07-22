@@ -1,7 +1,8 @@
- header{
-    position: absolute;
-    width: 100%;
+ header {
+     position: absolute;
+     width: 100%;
  }
+
  nav a {
      text-decoration: none;
      color: white;
@@ -22,30 +23,27 @@
      display: flex;
      justify-content: space-evenly;
      list-style-type: none;
-    align-items: center;
+     align-items: center;
  }
 
  .logo {
      flex: 30%;
  }
 
- nav button{
-      width: 110px;
+ nav button {
+     width: 110px;
      min-height: 50px;
      border-radius: 25px;
      font-family: 'DM Sans', sans-serif;
      font-size: medium;
-   border:1px solid white
-   
-    
-
+     border: 1px solid white
  }
 
  /* banner css */
  #banner {
 
      background-image: url('../assets/images/banner.png');
-     min-height: 500px;
+     min-height: 700px;
      background-repeat: no-repeat;
      background-size: cover;
      padding-top: 70px;
@@ -54,9 +52,9 @@
 
  .bannerdiv {
      display: flex;
-     justify-content: space-between;
      padding-top: 30px;
-
+     padding-left: 20px;
+     text-align: justify;
  }
 
  .bannerleft {
@@ -74,38 +72,97 @@
 
  .bannerright h3 {
      font-family: 'Proxima Nova', sans-serif;
-    max-width: 360px;
-    min-height: 94px;
-  font-size: xx-large;
-  font-weight: lighter;
-    word-spacing: 5px;
+     max-width: 360px;
+     min-height: 94px;
+     font-size: xx-large;
+     font-weight: lighter;
+     word-spacing: 5px;
  }
 
  .bannerright p {
      font-family: 'Proxima Nova', sans-serif;
-     font-size: 18px;
-   padding-top: 20px;
-    padding-bottom: 30px;
-    max-width: 420px;
-    
+     font-weight: normal;
+     /* font-size: 18px; */
+     padding-top: 20px;
+     padding-bottom: 30px;
+     max-width: 400px;
+
  }
 
- .bannerright button {
+ .bannerright .buttonone {
+    background-color: #F5167E;
+ }
+
+ .btnleanmore {
      width: 150px;
      min-height: 50px;
      border-radius: 30px;
      font-family: 'DM Sans', sans-serif;
      font-size: 18px;
-     background-color: #F5167E;
+     
      border: none;
-    margin-right: 10px;
-    color: white;
+     margin-right: 10px;
+     color: white;
+     background-color: transparent;
+     border: 1px solid rgb(250, 246, 246);
  }
-.btnleanmore{
-    background-color: transparent;
-    border: 1px solid rgb(250, 246, 246);
-}
+
  .bannerright {
      padding-top: 80px;
      text-align: justify;
  }
+
+ /* searchevent.css */
+ .searchdiv {
+     min-height: 140px;
+     background-color: #242565;
+     border-radius: 15px;
+     position: relative;
+     width: 100%;
+     bottom: 70px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     color: white;
+ }
+
+ .searchdiv h6 {
+     font-size: 16px;
+     font-family: 'DM Sans', sans-serif;
+     margin-bottom: 10px;
+     font-weight: lighter;
+ }
+ .searchdiv p {
+     font-size: 22px;
+     font-family: 'DM Sans', sans-serif;
+     font-weight: bold;
+ }
+ /* upcoming event css */
+
+ .eventgrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1.5fr;
+  gap: 20px;
+ background-color: rgb(236, 226, 226);
+  min-height: 700px;
+  margin-bottom: 30px;
+ }
+ .grids{
+  background-color: #f7f7f8;
+  border-radius: 15px;
+ }
+ .grid1imgdiv{
+    min-height: 192px;
+   
+ }
+ .grid1imgdiv img{
+background-size: cover;
+width: 100%;
+ }
+ .btngrid{
+color: blue;
+border: 1px solid blue;
+  margin-bottom: 30px;
+ }
+ 
