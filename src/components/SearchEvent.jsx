@@ -1,6 +1,7 @@
 import React from 'react'
 
 const SearchEvent = () => {
+    
     return (
         <div className="container searchdiv">
             <div >
