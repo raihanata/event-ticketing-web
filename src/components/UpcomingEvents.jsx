@@ -8,6 +8,7 @@ import upcomegriddiv6 from '../assets/images/gridupcomingimg6.png'
 
 import Select from "react-dropdown-select";
 import CustomDropdown from './CustomDropdown'
+import EventCard from './EventCard'
 
 // import { Dropdown } from 'primereact/dropdown';
 
@@ -75,6 +76,7 @@ const UpcomingEvents = () => {
         </div>
       </div>
       <div className='eventgrid'>
+        {/* <EventCard eventData={{ image: upcomegriddiv1}}/> */}
         <div className='grids'>
           <div className='grid1imgdiv'><img src={upcomegriddiv1} alt="" /></div>
           <div className='griddatecontainer'>
