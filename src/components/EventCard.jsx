@@ -1,6 +1,7 @@
 
 
 const EventCard = ({ eventData }) => {
+    
   return (
     <div className='grids'>
         <div className='grid1imgdiv'><img src={eventData.image} alt="" /></div>

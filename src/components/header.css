@@ -37,8 +37,8 @@
      font-family: 'DM Sans', sans-serif;
      font-size: medium;
      border: 1px solid white;
- background-color: transparent;
- color: white;
+     background-color: transparent;
+     color: white;
  }
 
  /* banner css */
@@ -93,6 +93,7 @@
 
  .bannerright .buttonone {
      background-color: #F5167E;
+     border: none;
  }
 
  .btnleanmore {
@@ -126,9 +127,9 @@
      justify-content: space-around;
      align-items: center;
      color: white;
-box-shadow: -1px 7px 17px 2px rgba(171,171,201,0.75);
--webkit-box-shadow: -1px 7px 17px 2px rgba(171,171,201,0.75);
--moz-box-shadow: -1px 7px 17px 2px rgba(171,171,201,0.75);
+     box-shadow: -1px 7px 17px 2px rgba(171, 171, 201, 0.75);
+     -webkit-box-shadow: -1px 7px 17px 2px rgba(171, 171, 201, 0.75);
+     -moz-box-shadow: -1px 7px 17px 2px rgba(171, 171, 201, 0.75);
  }
 
  .searchdiv h6 {
@@ -148,12 +149,14 @@ box-shadow: -1px 7px 17px 2px rgba(171,171,201,0.75);
  .upcoming {
      margin-bottom: 30px;
  }
-.gridTopP{
-      font-family: 'Proxima Nova', sans-serif;
-      font-size: 30px;
-      font-weight: bold;
-      color: #242565;
-}
+
+ .gridTopP {
+     font-family: 'Proxima Nova', sans-serif;
+     font-size: 30px;
+     font-weight: bold;
+     color: #242565;
+ }
+
  .eventgrid {
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
@@ -246,7 +249,7 @@ box-shadow: -1px 7px 17px 2px rgba(171,171,201,0.75);
 
  .makeevent {
      background-color: #EEE1FF;
-    
+
      margin-bottom: 10px;
 
  }
@@ -268,18 +271,18 @@ box-shadow: -1px 7px 17px 2px rgba(171,171,201,0.75);
      font-family: 'DM Sans', sans-serif;
      font-weight: lighter;
      margin-bottom: 30px;
-     
+
  }
 
  .btnmakeevent {
-     max-width: 402px;
+     min-width: 202px;
      background-color: #F5167E;
 
  }
 
  .makeEventright {
      text-align: justify;
-   margin-bottom: 10px;
+     margin-bottom: 10px;
  }
 
  .makeEventleft img {
@@ -287,5 +290,10 @@ box-shadow: -1px 7px 17px 2px rgba(171,171,201,0.75);
      position: relative;
      bottom: 50px;
  }
+
  /* mediaquery */
- 
+ /* @media screen and (max-width:768px) {
+.topsecgrid {
+    flex-direction: column;
+    }
+} */
