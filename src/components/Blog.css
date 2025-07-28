@@ -1,0 +1,77 @@
+#Blog{
+    
+    background-color: rgba(255, 255, 255, 1);
+}
+.heading{
+    color: rgba(36, 37, 101, 1);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    text-align: center;
+    
+
+}
+.p-lorem{
+    color:rgba(106, 106, 106, 1);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 47px;
+}
+.div-image{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr;
+column-gap: 29px;
+
+}
+.image-main p{
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+.hall{
+width: 343px;
+height: 210px;
+}
+.image1{
+    max-width: 100%;
+}
+.h3-div{
+    color: rgba(36, 37, 101, 1);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;   
+}
+.doe{
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: rgba(165, 165, 165, 1);    
+}
+.more{
+     color:rgba(61, 55, 241, 1);;
+    width: 182px;
+    height: 60px;
+    border-radius: 50px; 
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    background-color: transparent;
+    border: 1px solid  rgba(61, 55, 241, 1);   
+}
+.learn{
+    margin: auto;
+     display: flex;
+    justify-content: center;
+}
+.blog div{
+margin-bottom: 20px;
+}

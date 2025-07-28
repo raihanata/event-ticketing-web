@@ -4,6 +4,8 @@ import UpcomingEvents from '../components/UpcomingEvents'
 
 import SearchEvent from '../components/SearchEvent'
 import MakeEvent from '../components/MakeEvent'
+import Blog from '../components/Blog'
+import Brand from '../components/Brand'
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
       <SearchEvent />
       <UpcomingEvents />
       <MakeEvent/>
+       <Brand/>
+      <Blog/>  
     </>
   )
 }
