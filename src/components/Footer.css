@@ -7,13 +7,6 @@
 
 
 }
-.footerdiv{
-    min-width: 1240px;
-    min-height: 353px;
-
-
-}
-
 .div-p{
     color: white;
     margin-top: 15x;
@@ -35,6 +28,7 @@ font-style: bold;
 font-size: 18px;
 line-height: 100%;
 letter-spacing: normal;
+padding-top: 24px;
 
 }
 .l1{
@@ -48,7 +42,7 @@ letter-spacing: normal;
 .main1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 84px;
+    column-gap: 20px;
     
 }
 .loop{
@@ -60,11 +54,13 @@ font-size: 14px;
 .subcribe-div{
  display: flex;
  align-items: center;
+ flex-wrap: nowrap;
+ flex-direction: row;
  gap: 10px; 
 background-color:white;
 padding: 8px;
 border-radius: 8px;
-max-width: 400px;
+max-width: 280px;
 border-radius: 45.59px;
 margin-top: 20px;
 }
@@ -74,7 +70,7 @@ display: inline-block;
   height:49.4px; 
   background-color: #EC2F8B; 
   color: rgba(255, 255, 255, 1); 
-  font-family: 'DM Sans', sans-serif;
+  font-family:  sans-serif;
   font-weight: 400;
   font-size: 12.16px;
   line-height: 16px; 
@@ -103,6 +99,10 @@ display: inline-block;
   font-size: 14px;
   color: rgba(254, 254, 254, 1);
 }
-.text-center{
-    text-align: center;
-} 
+ 
+
+@media screen and (width <= 724px) {
+    .main1 {
+        
+    }
+}

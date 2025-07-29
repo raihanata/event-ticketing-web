@@ -19,7 +19,7 @@ const EventCard = ({ eventData }) => {
         </div>
         <p>{eventData.description}</p>
     </div>
-  )
+  ) 
 }
 
 export default EventCard

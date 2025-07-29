@@ -1,0 +1,30 @@
+.head{
+    text-align: center;
+    padding-top: 70px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: rgba(36, 37, 101, 1);
+}
+.subhead{
+    text-align: center;
+    padding-top: 22px; 
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: rgba(106, 106, 106, 1);
+    margin-bottom: 50px;
+}
+.brand-logos{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    justify-content: center;
+    gap: 45.3px;
+    margin-bottom: 140px;
+}
+.logo{
+     display: flex;
+    justify-content: center;
+    align-items: center; 
+     max-width: 100%
+}

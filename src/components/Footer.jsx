@@ -35,7 +35,7 @@ const Footer = () => (
             <h3>plan Events</h3>
 
             <ul className='l1'>
-              <li>Crate and set up</li>
+              <li>Create and set up</li>
               <li>sell Tickets</li>
               <li>online RSVP</li>
               <li>online EVents</li>
@@ -64,32 +64,17 @@ const Footer = () => (
            <input type="email" placeholder="Enter your email address..."  className='input-email'/>
              <button className='button'>Subscribe Now</button>  
           </div>
-        </div>
-
-
-          <div className="row">
-  <div className="col-md-12 copy">
-    <p className="text-center">
-    Copyright © 2022 Avi Yansah.
-    </p>
+        </div>       
   </div>
-</div>
-          
   </div>
-            
-            
 
-              
-          
-
-
-  
-
-
-
-
-</div>
-
+    <div className="row">
+      <div className="col-md-12 copy">
+        <p className="text-center">
+        Copyright © 2022 Avi Yansah.
+        </p>
+      </div>
+    </div>
 
     </div>
   </footer>
