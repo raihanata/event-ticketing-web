@@ -42,7 +42,7 @@ padding-top: 24px;
 .main1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 75px;
+    column-gap: 20px;
     
 }
 .loop{
@@ -54,11 +54,13 @@ font-size: 14px;
 .subcribe-div{
  display: flex;
  align-items: center;
+ flex-wrap: nowrap;
+ flex-direction: row;
  gap: 10px; 
 background-color:white;
 padding: 8px;
 border-radius: 8px;
-max-width: 400px;
+max-width: 280px;
 border-radius: 45.59px;
 margin-top: 20px;
 }
@@ -98,3 +100,9 @@ display: inline-block;
   color: rgba(254, 254, 254, 1);
 }
  
+
+@media screen and (width <= 724px) {
+    .main1 {
+        
+    }
+}

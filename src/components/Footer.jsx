@@ -68,16 +68,16 @@ const Footer = () => (
   </div>
   </div>
 
-  <div className="row">
-          <div className="col-md-12 copy">
-            <p className="text-center">
-            Copyright © 2022 Avi Yansah.
-            </p>
-          </div>
-        </div>
+    <div className="row">
+      <div className="col-md-12 copy">
+        <p className="text-center">
+        Copyright © 2022 Avi Yansah.
+        </p>
+      </div>
+    </div>
 
-</div>
-</footer>
+    </div>
+  </footer>
 )
 
 export default Footer

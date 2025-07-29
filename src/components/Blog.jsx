@@ -18,7 +18,7 @@ export const Blog = () => {
 
             <div className='div-image'>
                 {
-                blogs.map(item=>   <BlogEvent Blogdata={item}/>)
+                blogs.map(item=>   <BlogEvent blogData={item}/>)
                  }
 
                 

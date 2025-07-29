@@ -13,3 +13,11 @@
  
 }
 
+
+@media screen and (width <= 1149px) {
+        .container {
+            padding: 0px 15px;
+        }
+}
+
+

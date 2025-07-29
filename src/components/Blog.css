@@ -36,13 +36,10 @@ column-gap: 29px;
    margin-top: 20px;
    margin-bottom: 20px;
 }
-.hall{
-width: 343px;
-height: 210px;
-}
-.image1{
+.hall img {
     max-width: 100%;
 }
+
 .h3-div{
     color: rgba(36, 37, 101, 1);
     font-weight: 700;

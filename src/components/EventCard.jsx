@@ -14,7 +14,7 @@ const EventCard = ({ eventData }) => {
         </div>
         <p>We’ll get you directly seated and inside for you to enjoy the show.</p>
     </div>
-  )
+  ) 
 }
 
 export default EventCard

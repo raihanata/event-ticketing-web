@@ -6,7 +6,7 @@ export const blogs = [
             month:"mar",
             day:12    
         },
-        image:'/image/hall.png'
+        image:'/images/hall.png'
     
     },
     {
@@ -16,7 +16,7 @@ export const blogs = [
             month:"mar",
             day:12    
         },
-        image:'/image/party.png'
+        image:'/images/party.png'
     },
     {
        title:"Introducing Workspaces: Work smarter, not harder with new navigation",
@@ -27,4 +27,5 @@ export const blogs = [
         },
         image:'/images/presentation.png'  
     }
+    
 ]
