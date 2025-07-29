@@ -1,18 +1,23 @@
+import { useEffect } from "react"
 
 
 const EventCard = ({ eventData }) => {
+
+  useEffect(()=> {
+    console.log(eventData, 'event data')
+  }, [eventData])
     
   return (
     <div className='grids'>
         <div className='grid1imgdiv'><img src={eventData.image} alt="" /></div>
         <div className='griddatecontainer'>
         <div className='gridDate'>
-            <h6>APR</h6>
-            <h5>14</h5>
+            <h6>{eventData.date.month}</h6>
+            <h5>{eventData.date.day}</h5>
         </div>
-        <h4>Wonder Girls 2010 Wonder Girls World Tour San Francisco</h4>
+        <h4>{eventData.title}</h4>
         </div>
-        <p>We’ll get you directly seated and inside for you to enjoy the show.</p>
+        <p>{eventData.description}</p>
     </div>
   )
 }

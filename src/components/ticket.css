@@ -1,0 +1,52 @@
+.bannerticket{
+    background-image: url('../../public/images/ticket-banner.png');
+    min-height: 300px;
+  background-size: cover;
+}
+/* event website status */
+.secSitestatus{
+background-color: brown;
+}
+.flexstatus{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 250px;
+    color: white;
+    font-family: sans-serif;
+}
+.flexstatus label {
+    margin-right: 10px;
+    
+    font-size: 38px;
+    font-weight: bold;
+}
+.flexstatus p{
+    margin-top: 10px;
+     font-size: 30px;
+    font-weight: bold;
+}
+.flexdivs{
+    text-align: center;
+}
+i{
+    font-size: 40px;
+    
+}
+/* mobile app section */
+#SecMobileapp{
+  background-color: black
+}
+.flexMobileApp{
+    display: flex;
+   justify-content:normal;
+    padding-top: 40px;
+    min-height: 500px;
+    gap:20px
+}
+.DivsFlexmobile{
+ flex-basis: 50%;
+ 
+    height: 250px;
+    background-color: rgb(248, 248, 252);
+}
