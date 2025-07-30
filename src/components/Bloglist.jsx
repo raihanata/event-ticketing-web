@@ -8,7 +8,7 @@ const Bloglist = () => {
   return (
   <div className='container'>
     
-   <div div className='image-main div-image'>
+   <div div className='image-main div-image' style={{marginTop:'20px'}}>
     {
         blogs.map(item=> <BlogEvent blogData={item}/>)
     }        
