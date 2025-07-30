@@ -54,6 +54,7 @@ const UpcomingEvents = () => {
             onChange={(values) => this.setValues(values)}
             className='custom-dropdownGrid'
           />
+          <div className="container"></div>
         </div>
         <div>
           <Select
