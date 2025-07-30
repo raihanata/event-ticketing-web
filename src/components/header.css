@@ -36,7 +36,7 @@
      border-radius: 25px;
      font-family: 'DM Sans', sans-serif;
      font-size: medium;
-     border: 1px solid white;
+     border: 2px solid white;
      background-color: transparent;
      color: white;
  }
@@ -151,9 +151,10 @@
  }
 
  .gridTopP {
-     font-family: 'Proxima Nova', sans-serif;
+     /* font-family: 'Proxima Nova', sans-serif;
      font-size: 30px;
-     font-weight: bold;
+     font-weight: bold; */
+     font: 30px 'Proxima Nova', sans-serif;
      color: #242565;
  }
 
@@ -329,6 +330,11 @@ nav ul{
     }
 }
 
+@media screen and (max-width:1048px) {
+.subcribe-div{
+    flex-direction:column;
+    }
+}
 @media screen and (max-width:1048px) {
 .subcribe-div{
     flex-direction:column;
