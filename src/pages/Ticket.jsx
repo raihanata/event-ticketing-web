@@ -10,7 +10,7 @@ import HeaderTwo from '../components/HeaderTwo'
 const Ticket = () => {
   return (
     <>
-    <HeaderTwo/>
+    {/* <HeaderTwo/> */}
     <BanetTicket/>
      <EventList/>
      <SiteStatus/>
