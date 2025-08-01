@@ -7,7 +7,7 @@ import EventList from '../components/EventList'
 import HeaderTwo from '../components/HeaderTwo'
 import WhyHosttoUs from '../components/WhyHosttoUs'
 
-
+import Searchbar from '../components/Search bar'
 
 
 const Ticket = () => {
@@ -16,6 +16,7 @@ const Ticket = () => {
   return (
     <>
     <HeaderTwo/>
+     <Searchbar/>
     <BanetTicket/>
      <EventList/>
      <SiteStatus/>

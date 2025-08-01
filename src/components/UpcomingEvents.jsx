@@ -4,6 +4,7 @@ import Select from "react-dropdown-select";
 import CustomDropdown from './CustomDropdown'
 import EventCard from './EventCard'
 import { upcomingEvents } from '../data/events'
+import { Link } from "react-router-dom";
 
 // import { Dropdown } from 'primereact/dropdown';
 
@@ -79,6 +80,7 @@ const UpcomingEvents = () => {
   
       </div>
       <button className='btnleanmore btngrid'>Load More</button>
+      <Link to='/blog'>Blog</Link>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import './Blog.css';
 import BlogEvent from './BlogEvent';
 import { blogs } from '../data/blog';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export const Blog = () => {
@@ -33,7 +33,7 @@ export const Blog = () => {
 
                 <div className='learn'>
                     <button className='more' onClick={handleClick }>Load More</button>
-
+                    <Link to='/blog'/>
                 </div>
 
 

@@ -8,7 +8,7 @@ const EventList = () => {
             <div className="container">
                 <div className='eventListGrid'>
                  {
-                    eventlist.map(item=><EventListCard eventListData={item}/>)
+                    eventlist.map((item, idx)=><EventListCard eventListData={item} key={idx}/>)
                  }
                    
 

@@ -11,7 +11,7 @@ const WhyHosttoUs = () => {
         <h2>Why to host your next event with us? </h2>
         <div className='whyhostGrid'>
             {
-                whyHostvalues.map(item=><WhyHostCard whyhostData={item} />)
+                whyHostvalues.map((item, idx)=><WhyHostCard whyhostData={item} key={idx} />)
             }
          {/* <div className='whyhostcards'>
           <div className='whytohoostimgDiv'><img src="/images/ticketpage/whytihostimg1.png" alt="" /></div>
