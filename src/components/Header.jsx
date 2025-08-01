@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import '../components/header.css'
 import imgUrl from '../assets/images/logo.png'
+import { Link } from 'react-router';
 
 const Header = () => {
 
@@ -14,10 +15,10 @@ const Header = () => {
                 <ul>
                     
                     
-                    <li class="navitems"><a href="">Schedule</a></li>
-                    <li class="navitems"><a href="">Speakers</a></li>
-                    <li class="navitems"><a href="">Ticket</a></li>
-                    <li class="navitems"><a href="">Contact</a></li>
+                    <li className="navitems"><a href="">Schedule</a></li>
+                    <li className="navitems"><a href="">Speakers</a></li>
+                    <li className="navitems"><a href="/ticket">Ticket</a></li>
+                    <li className="navitems"><a href="">Contact</a></li>
                     <li><button>Login </button></li>
                 </ul>
 

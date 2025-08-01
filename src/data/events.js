@@ -6,7 +6,7 @@ export const upcomingEvents = [
             month: 'APR',
             day: 14
         },
-        image: '/images/gridupcomingimg1.png'
+        image: 'public/images/ticketpage/gridupcomingimg1.png'
 
     },
      {
@@ -16,7 +16,7 @@ export const upcomingEvents = [
             month: 'MAR',
             day: 20
         },
-        image: '/images/gridupcomingimg2.png'
+        image: 'public/images/ticketpage/gridupcomingimg2.png'
 
     },
      {
@@ -26,7 +26,7 @@ export const upcomingEvents = [
             month: 'APR',
             day: 18
         },
-        image: '/images/gridupcomingimg3.png'
+        image: 'public/images/ticketpage/gridupcomingimg3.png'
 
     },
      {
@@ -36,7 +36,7 @@ export const upcomingEvents = [
             month: 'APR',
             day: 14
         },
-        image: '/images/gridupcomingimg4.png'
+        image: 'public/images/ticketpage/gridupcomingimg4.png'
 
     },
     {
@@ -46,7 +46,7 @@ export const upcomingEvents = [
             month: 'AUG',
             day: 20
         },
-        image: '/images/gridupcomingimg5.png'
+        image: 'public/images/ticketpage/gridupcomingimg5.png'
 
     },
     {
@@ -56,7 +56,7 @@ export const upcomingEvents = [
             month: 'SEP',
             day: 18
         },
-        image: '/images/gridupcomingimg6.png'
+        image: 'public/images/ticketpage/gridupcomingimg6.png'
 
     },
 ]

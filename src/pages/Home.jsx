@@ -8,6 +8,7 @@ import Blog from '../components/Blog'
 import Brand from '../components/Brand'
 
 const Home = () => {
+
   return (
     <>
       <Banner />
