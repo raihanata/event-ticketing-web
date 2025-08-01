@@ -2,9 +2,16 @@ import React from 'react'
 import './Blog.css';
 import BlogEvent from './BlogEvent';
 import { blogs } from '../data/blog';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Blog = () => {
+  const navigate = useNavigate();
+
+      const handleClick = () => {
+        navigate('blog/'); 
+      };
+
   return (
     <section id='Blog'>
         <div className='container'>
@@ -25,7 +32,8 @@ export const Blog = () => {
             </div>
 
                 <div className='learn'>
-                    <button className='more'>Load More</button>
+                    <button className='more' onClick={handleClick }>Load More</button>
+
                 </div>
 
 

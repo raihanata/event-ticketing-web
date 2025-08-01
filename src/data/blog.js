@@ -4,7 +4,7 @@ export const blogs = [
         description:"Sekarang, kamu bisa produksi tiket fisik untuk eventmu bersama Bostiketbos. Hanya perlu mengikuti beberapa langkah mudah.",
         date:{
             month:"mar",
-            day:12    
+            day: 12    
         },
         image:'/images/hall.png'
     
