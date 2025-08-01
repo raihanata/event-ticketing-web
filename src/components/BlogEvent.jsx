@@ -14,8 +14,7 @@ const BlogEvent = ({blogData}) => {
                     </div>
                     <div>
                         <span className='doe'>
-                        {blogData.date.month}
-                        {blogData.date.day}
+                            {`${blogData.date.month} ${blogData.date.day}`}
                         </span>
                     </div>
                 </div>
