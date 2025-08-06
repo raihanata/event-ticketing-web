@@ -16,10 +16,10 @@ const searchbar = () => {
     <div className="filter-wrapper">
      <button className="filter-button">Filter</button>
      <div className="filter-content">
-        <label className="filter-option"><input type="checkbox" /> Cities</label>
-        <label className="filter-option"><input type="checkbox" /> Events</label>
-        <label className="filter-option"><input type="checkbox" /> Dates</label>
-        <label className="filter-option"><input type="checkbox" /> Blogs</label>
+        <label className="filter-option"><input type="radio" /> Cities</label>
+        <label className="filter-option"><input type="radio" /> Events</label>
+        <label className="filter-option"><input type="radio" /> Dates</label>
+        <label className="filter-option"><input type="radio" /> Blogs</label>
      </div>
     </div>
 
