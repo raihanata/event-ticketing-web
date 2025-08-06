@@ -3,8 +3,11 @@ import React from 'react'
 const BanetTicket = () => {
   return (
     <section >
-      {/* <div style={{minHeight:'100px',backgroundColor:'#050563ff'}}></div> */}
-       <div className='bannerticket'></div>
+    
+       <div className='bannerticket'>
+        <img src="/images/ticket-banner.png'" alt="" />
+       
+       </div>
     </section>
   )
 }

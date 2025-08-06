@@ -19,15 +19,16 @@
  }
 
  nav ul {
-     flex: 70%;
+     flex: 60%;
      display: flex;
-     justify-content: space-evenly;
+     justify-content: space-between;
      list-style-type: none;
      align-items: center;
  }
 
  .logo {
-     flex: 30%;
+     flex: 40%;
+    float: left;
  }
 
  nav button {

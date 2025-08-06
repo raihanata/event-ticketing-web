@@ -2,9 +2,13 @@ import React from 'react';
 import '../App.css';
 import '../components/header.css'
 import imgUrl from '../assets/images/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+     const navigate=useNavigate();
+    const loginClick=()=>{
+       navigate('/login')
+    }
 
     return (
         <header>
@@ -17,7 +21,7 @@ const Header = () => {
                     <li className="navitems"><a href="">Speakers</a></li>
                     <li className="navitems"><Link to="/ticket">Ticket</Link></li>
                     <li className="navitems"><a href="">Contact</a></li>
-                    <li><button>Login </button></li>
+                    <li><button onClick={loginClick}>Login </button></li>
                 </ul>
 
             </nav>

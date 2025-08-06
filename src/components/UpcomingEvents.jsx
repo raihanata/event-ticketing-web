@@ -73,11 +73,11 @@ const UpcomingEvents = () => {
         </div>
       </div>
       <div className='eventgrid'>
-      {
-        upcomingEvents.map(item=>   <EventCard eventData={item}/>)
-      }
+        {
+          upcomingEvents.map(item => <EventCard eventData={item} />)
+        }
 
-  
+
       </div>
       <button className='btnleanmore btngrid'>Load More</button>
       <Link to='/blog'>Blog</Link>
