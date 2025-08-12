@@ -13,6 +13,7 @@ const Regitrastion = () =>{
   const [selectedcountry,setSelectedCountry] =useState('');
   const [isChecked,setIsChecked] =useState();
   const[isChecked1,setIsChecked1] = useState();
+  const[Phone,setPhone] = useState ('');
 
   
   
@@ -34,6 +35,9 @@ const validateForm = () =>{
       newErrors.password = 'Password is required'
     }else if (password.length<6){
       newErrors.password ='Password must be at least 6 characters';
+    }
+    if(!Phone){
+      newErrors.Phone = 'phone number is required'
     }
     if (!confirmPassword){
       newErrors.confirmPassword = 'Confirm your password';
@@ -78,13 +82,14 @@ const validateForm = () =>{
     }
     console.log ('Form data submitted:',{email,firstname,lastname});
 
-    console.log('from data sumbitted:',{email,firstname,lastname,password,confirmPassword,selectedoption,selectedcountry,isChecked,isChecked1});
+    console.log('from data sumbitted:',{email,firstname,lastname,password,confirmPassword,selectedoption,selectedcountry,isChecked,isChecked1,Phone});
     setEmail('');
     setPassword('');
     setConfirmpassword('');
     setFirstname('');
     setLastname('');
     setSelectedOption('');
+    setPhone('');
     
 
 
@@ -96,7 +101,7 @@ const validateForm = () =>{
     }
 
   }
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   
  return(
@@ -130,6 +135,11 @@ const validateForm = () =>{
                 <input type="password"  value={confirmPassword}  onChange={(e) => setConfirmpassword(e.target.value)}  placeholder="  confirm Password"  />
                 {errors.confirmPassword && <p style={{ color: 'red'}}>{errors.confirmPassword}  </p>}
               </div>
+              <div className="input_field">
+                <span><i className="fa fa-envelope"></i></span>
+                <input type="Phone" value={Phone} onChange={(e) => setPhone(e.target.value)}  placeholder="Enter your phone number"/>
+                {errors.Phone && <p style={{ color: 'red'}}>{errors.Phone }</p>}
+              </div>
               <div className="row clearfix">
                 <div className="col_half">
                   <div className="input_field">
@@ -151,8 +161,9 @@ const validateForm = () =>{
                <label htmlFor="rd1">Male</label>
                 <input type="radio" value= "Female" checked ={selectedoption ==='Female'}onChange={(e)=>setSelectedOption(e.target.value)}  name="gender" id="rd2" />
                 <label htmlFor="rd2">Female</label>
-                {errors.gender && <p style={{ color: 'red '}}> {errors.gender }</p>}
                 </div>
+                {errors.gender && <p style={{ color: 'red '}}> {errors.gender }</p>}
+
               <div className="input_field select_option">
               <select value={selectedcountry} onChange={handleChange}>
                   <option>Select a country</option>
