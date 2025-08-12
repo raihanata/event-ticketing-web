@@ -4,7 +4,7 @@ export const eventlist = [
         title: 'Startup Domain Summit-2025',
         date: {
             from: 'Fri, Aug 8 2025',
-            to: '2:00 PM IST'
+            to: 'Fri, Aug 9 2025'
         },
         time: '10:00AM -  2:00PM(IST)',
         place: 'Vigyan Bhava, New Delhi, India, Delhi',
