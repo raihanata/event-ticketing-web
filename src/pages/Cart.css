@@ -1,0 +1,96 @@
+.cart-container {
+   max-width: 500px;
+  margin: auto;
+  background-color: #0a1f44; 
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 80px 60px 80px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ticket-type {
+  font-weight: bold;
+}
+
+.ticket-price,
+.ticket-subtotal {
+  text-align: right;
+}
+
+.ticket-qty {
+  width: 50px;
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
+}
+
+.coupon-section {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.coupon-section input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+.apply-btn {
+  background-color: white;
+  color: #0a1f44;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.apply-btn:hover {
+  background-color: #ffcc00;
+}
+
+.total-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffcc00;
+  color: #0a1f44;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background-color: #ffd633;
+}

@@ -7,6 +7,7 @@ import Ticket from './pages/Ticket'
 import BlogPage from './pages/BlogPage'
 import Login from './pages/Login'
 import Regitrastion from './pages/Regitrastion'
+import Cart from './pages/Cart'
 
 function App() {
   // const [count, setCount] = useState(0) 
@@ -21,6 +22,7 @@ function App() {
       <Route path='/ticket' element={<Ticket/>}/>  
        <Route path='/login' element={<Login/>}/>
        <Route path='/register' element={<Regitrastion/>}/>
+       <Route path='/Cart' element={<Cart/>}/>
      </Routes>
       <Footer/>
      </BrowserRouter>
