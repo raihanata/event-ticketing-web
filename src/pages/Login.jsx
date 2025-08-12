@@ -6,17 +6,9 @@ const Login = () => {
   const [email,setEmail]= useState('');
   const[password,setPassword] = useState ('');
   const[rember,setRember] = useState ('');
-  // const navigate = useNavigate();
+ const navigate = useNavigate();
    
-  // const handleForgotsubmit = (e) =>{
-  //   e.preventDefault();
-  //   if(!resetPassword){
-  //     alert("please entre your rmail");
-  //     return;
-  //   }
-  //   setResetPassword('');
-  //   setFormType("login");
-  // };
+  
 
 
 
