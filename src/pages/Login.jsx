@@ -37,7 +37,7 @@ const Login = () => {
   }
 
 
-    console.log('Form data submitted:',{email,password,remember});
+    console.log('Form data submitted:',{email,password,rember});
     setEmail('');
     setPassword('');
     setRember('');
