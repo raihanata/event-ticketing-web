@@ -15,9 +15,8 @@ const Regitrastion = () =>{
   const[isChecked1,setIsChecked1] = useState();
 
   
-        const handleRadiochange = (even) =>{
+  
 
-}
 
 const validateForm = () =>{
   const newErrors = {};
