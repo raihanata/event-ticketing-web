@@ -101,7 +101,7 @@ const validateForm = () =>{
     }
 
   }
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   
  return(
