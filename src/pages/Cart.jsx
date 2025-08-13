@@ -101,7 +101,7 @@ export default function Cart() {
         <strong>${total.toFixed(2)}</strong>
       </div>
 
-      <button className="checkout-btn">Proceed to Checkout</button>
+      {/* <button className="checkout-btn">Proceed to Checkout</button> */}
     </div>
         </div>
         </>
