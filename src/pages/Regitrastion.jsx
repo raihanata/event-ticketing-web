@@ -108,7 +108,7 @@ const validateForm = () =>{
       
  <>
  <HeaderTwo/>
-
+      
         <div className="container">    
           <div className="registration">
             <div className="title_container">

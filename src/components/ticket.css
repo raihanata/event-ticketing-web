@@ -64,7 +64,7 @@
     align-items: center;
     min-height: 250px;
     color: white;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 
 .flexstatus label {
