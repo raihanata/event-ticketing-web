@@ -1,18 +1,42 @@
 import React, { useState } from 'react'
 import HeaderTwo from '../components/HeaderTwo'
 import './login.css'
-import { href, Link, useNavigate } from 'react-router-dom'
+import { Await, href, Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 const Login = () => {
   const [email,setEmail]= useState('');
   const[password,setPassword] = useState ('');
   const[rember,setRember] = useState ('');
- const navigate = useNavigate();
-   
-  
+  const [error,setError] = useState ('');
+  const [loading,setLoading] = useState('');
+  const navigate = useNavigate();
 
+ const API_URL ="https://event-ticketing-backend-643r.onrender.com/login";
 
+  const handleLogin = async (data) => {
 
+    setError('');
+    setLoading('');
 
+    try{
+      const res  = await axios.post(API_URL, data).then(res=> {
+        console.log(res.data)
+      }).catch(err=> {
+        console.log(err)
+      })
+      localStorage.setItem("auth_token",res.data.token);
+      alert("Loginsucessful!");
+    }catch (err){
+      if (err.response){
+        setError(err.response.data.message || "login falied ");
+      }else{
+        setError(err.message);
+      }
+    }finally{
+      setLoading();
+    }
+  };
 
   const handleSumbit = (event)=>{
     event.preventDefault();
@@ -36,8 +60,8 @@ const Login = () => {
     return
   }
 
-
-    console.log('Form data submitted:',{email,password,rember});
+    handleLogin({ email, password, rember })
+    
     setEmail('');
     setPassword('');
     setRember('');
@@ -45,7 +69,7 @@ const Login = () => {
 
 
 if (email && password){
-  navigate("/");
+  navigate("/")
 } else{
   alert('please fill in both fileds')
 };
@@ -140,7 +164,7 @@ return (
                 type="text"
                 id="name"
                 placeholder="Your Name"
-                required=""
+              
               />
             </div>
             <div className="input-group">
