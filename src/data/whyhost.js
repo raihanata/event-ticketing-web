@@ -1,4 +1,4 @@
-export const whyHostvalues = [
+ export const whyHostvalues = [
     {
         image: '/images/ticketpage/whytihostimg1.png',
         title: 'Enhance User Experience Engagement',
