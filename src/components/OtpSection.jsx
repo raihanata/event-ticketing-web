@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HeaderTwo from './HeaderTwo'
 
-const Otpsection = ({setShowForgot,handlePassword}) => {
-
+const Otpsection = ({setShowForgot,handleVerifyotp,email}) => {
+const[otp,setOtp]=useState("")
+  const handleSumbit = (e) =>{
+      e.preventDefault()
+    handleVerifyotp(otp,email)
+  }
   return (
     <>
     <div className="popup-overlay">
@@ -10,17 +14,19 @@ const Otpsection = ({setShowForgot,handlePassword}) => {
         <h2>Enter OTP</h2>
         <p>Enter your OTP here</p>
 
-        <form  onSubmit={handlePassword}>
+        <form  onSubmit={handleVerifyotp}>
           <input
             type="number"
             placeholder="OTP"
+            value={otp}
+            onChange={(e)=> setOtp(e.target.value)}
             required
           />
           <div className="btn-group">
             <button type="button" className="link-btn" onClick={()=> setShowForgot(false)}>
               Back to sign in
             </button>
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="submit-btn" onClick={handleSumbit}>
               Confirm OTP
             </button>
           </div>
