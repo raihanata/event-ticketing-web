@@ -1,18 +1,21 @@
 import React from 'react'
 
-const Forgotpassword = ({setShowForgot,handleSendOtp}) => {
+const Forgotpassword = ({setShowForgot,handleCheckemail, setEmail,email}) => {
+  
   return (
     <>
       <div className="popup-overlay">
                         <div className="popup-card">
                           <h2>Find your email</h2>
-                          {/* <p>Enter your recovery email</p> */}
+                           <p>Enter your recovery email</p>
 
-                          <form onSubmit={handleSendOtp}>
+                          <form onSubmit={handleCheckemail}>
                             <input
                               type="email"
                               placeholder="Email"
                               required
+                              value={email}
+                              onChange={(e)=>  setEmail(e.target.value)}
                             />
                             <div className="btn-group">
                               <button type="button" className="link-btn" onClick={()=> setShowForgot(false)}>

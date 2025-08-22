@@ -18,10 +18,10 @@ const Login = () => {
   const [showOtpInput, setShowOtpInput] = useState(false)
 
 
-    const[showEmail,setshowEmail] = useState(false);
+    const[showPassword,setshowPassword] = useState(false);
   const navigate = useNavigate();
 
- const API_URL ="https://event-ticketing-backend-643r.onrender.com/login";
+ const API_URL_login ="https://event-ticketing-backend-643r.onrender.com/login";
 
       const validateForm = () =>{
         const newErrors= {};
@@ -44,7 +44,7 @@ const Login = () => {
         setLoading('');
 
         try{
-          const res  = await axios.post(API_URL, data).then(res=> {
+          const res  = await axios.post(API_URL_login, data).then(res=> {
             console.log(res.data)
              navigate("/")
           }).catch(err=> {
@@ -85,22 +85,94 @@ const Login = () => {
 
     };
 
-    const handleSendOtp = (e) => {
+    const handleCheckemail = (e) => {
       e.preventDefault()
-      // send otp api
+       try{
+        console.log(email);
+        
+         axios.post("https://event-ticketing-backend-643r.onrender.com/checkuser",{email}).then(res=> {
+            console.log(res.data)
+            setShowOtpInput(true)
+                setShowForgot(false)
+          }).catch(err=> {
+            console.log(err)
+          })
+        
+        }catch (err){
+          if (err.response){
+       
+          }else{
+            setErrors(err.message);
+          }
+        }finally{
+          setLoading();
+        }
 
-      setShowForgot(false)
-      setShowOtpInput(true)
+      
+    
     }
-    const handlePassword = (e)=>{
+    const handleVerifyotp = (e)=>{
+
+
       e.preventDefault()
-      setShowOtpInput(false)
-      setshowEmail(true)
+      try{
+        console.log(email);
+        
+         axios.post("https://event-ticketing-backend-643r.onrender.com/verifyotp",{email,otp}, {
+       
+         }).then(res=> {
+            console.log(res.data)
+            setShowOtpInput(false)
+             setshowPassword(true)   
+          }).catch(err=> {
+            console.log(err)
+          })
+
+         localStorage.setItem("auth_token",res.data.token);
+
+        }catch (err){
+          if (err.response){
+       
+          }else{
+            setErrors(err.message);
+          }
+        }finally{
+          setLoading();
+        }
+
     }
-   const handleEmail = (e) =>{
+   const handleNewpassword = (passwordata) =>{
     e.preventDefault()
-    setPassword(false)
-    setshowEmail(false)
+    try{
+        console.log(email);
+        
+         const token = localStorage.getItem('auth_token')
+         if (! token) {
+
+          throw Error('Invalid token!')
+         } else {
+          
+         axios.post("https://event-ticketing-backend-643r.onrender.com/resetpassword",passwordata, {
+             headers: {
+            Authorization: `Bearer ${token}`
+          }
+         }).then(res=> {
+            console.log(res.data)
+            setPassword(false)
+            setshowPassword(false)
+          }).catch(err=> {
+            console.log(err)
+          })
+        }
+      }catch (err){
+          if (err.response){
+       
+          }else{
+            setErrors(err.message);
+          }
+        }finally{
+          setLoading();
+        }
    }
 
 return (
@@ -157,7 +229,7 @@ return (
                 <input type="checkbox" value={rember} onChange={(e) => setRember(e.target.checked)} id="remember" />
                 <span>Remember me</span>
               </label>
-              <a href="#" onClick={(e)=> {e.preventDefault();setShowForgot(true);}}>
+              <a href="#" onClick={(e)=> {e.preventDefault(); setShowForgot(true);}}>
                 Forgot Password?
               </a>
               
@@ -180,12 +252,13 @@ return (
               </Link>
             </p>
           </form>
-                  { showForgot && <Forgotpassword setShowForgot ={setShowForgot} handleSendOtp={handleSendOtp}/>}
+                  { showForgot && <Forgotpassword setShowForgot ={setShowForgot} handleCheckemail={handleCheckemail} setEmail={setEmail}email= {email}/>}
+
                   {
-                    showOtpInput && <Otpsection setShowForgot={setShowForgot} handlePassword={handlePassword}/>
+                    showOtpInput && <Otpsection setShowForgot={setShowForgot} handleVerifyotp={handleVerifyotp} email={email}/>
                   }
                   {
-                    showEmail && <EmailRecovery setshowPassword ={setShowForgot} handleEmail={handleEmail}/>
+                    showPassword && <EmailRecovery setshowPassword ={setShowForgot} handleNewpassword={handleNewpassword} email={email} otp={otp}/>
                   }
         </div>
         <div id="registerForm" className="form">
