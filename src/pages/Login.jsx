@@ -3,79 +3,105 @@ import HeaderTwo from '../components/HeaderTwo'
 import './login.css'
 import { Await, href, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Otpsection from '../components/Otpsection'
+import Forgotpassword from '../components/Forgotpassword'
+import EmailRecovery from '../components/EmailRecovery'
 
 const Login = () => {
   const [email,setEmail]= useState('');
   const[password,setPassword] = useState ('');
   const[rember,setRember] = useState ('');
-  const [error,setError] = useState ('');
+  const[errors,setErrors] = useState ({});
   const [loading,setLoading] = useState('');
+  const[showForgot,setShowForgot] =useState(false);
+
+  const [showOtpInput, setShowOtpInput] = useState(false)
+
+
+    const[showEmail,setshowEmail] = useState(false);
   const navigate = useNavigate();
 
  const API_URL ="https://event-ticketing-backend-643r.onrender.com/login";
 
-  const handleLogin = async (data) => {
-
-    setError('');
-    setLoading('');
-
-    try{
-      const res  = await axios.post(API_URL, data).then(res=> {
-        console.log(res.data)
-      }).catch(err=> {
-        console.log(err)
-      })
-      localStorage.setItem("auth_token",res.data.token);
-      alert("Loginsucessful!");
-    }catch (err){
-      if (err.response){
-        setError(err.response.data.message || "login falied ");
-      }else{
-        setError(err.message);
+      const validateForm = () =>{
+        const newErrors= {};
+        if (!email){
+          newErrors.email = "Email is required";
+        }else if (!/\S+@\S+\.\S+/.test(email)){
+          newErrors.email ="Enter a valid email address "
+        }
+        if (!password){
+          newErrors.password ="password is required"
+        } else if (password.length<6){
+          newErrors.password ="password must be at least six character  "
+        }
+        setErrors(newErrors);
+        return Object.keys(newErrors).length===0;
       }
-    }finally{
-      setLoading();
+
+      const handleLogin = async (data) => {
+        setErrors('');
+        setLoading('');
+
+        try{
+          const res  = await axios.post(API_URL, data).then(res=> {
+            console.log(res.data)
+          }).catch(err=> {
+            console.log(err)
+          })
+          localStorage.setItem("auth_token",res.data.token);
+          alert("Loginsucessful!");
+        }catch (err){
+          if (err.response){
+            setErrors(err.response.data.message || "login falied ");
+          }else{
+            setErrors(err.message);
+          }
+        }finally{
+          setLoading();
+        }
+      };
+
+      const handleSumbit = (event)=>{
+        event.preventDefault();
+        if(!validateForm()) return;
+
+      
+
+        handleLogin({ email, password, rember })
+        
+        setEmail('');
+        setPassword('');
+        setRember('');
+          
+
+
+    if (email && password){
+      // navigate("/")
+    } else{
+      alert('please fill in both fileds')
+    };
+
+
+    };
+
+    const handleSendOtp = (e) => {
+      e.preventDefault()
+      // send otp api
+
+      setShowForgot(false)
+      setShowOtpInput(true)
     }
-  };
-
-  const handleSumbit = (event)=>{
-    event.preventDefault();
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email) {
-    alert("Please enter your email");
-    return;
-  } else if (!emailPattern.test(email)) {
-    alert("Please enter a valid email address");
-    return;
-  }
-  if (!password) {
-    alert("Please enter your password");
-    return;
-  } else if (password.length < 6) {
-    alert("Password must be at least 6 characters long");
-    return;
-  }
-  if(!rember){
-    alert("please check the rember me box ");
-    return
-  }
-
-    handleLogin({ email, password, rember })
-    
-    setEmail('');
-    setPassword('');
-    setRember('');
-    
-
-
-if (email && password){
-  navigate("/")
-} else{
-  alert('please fill in both fileds')
-};
-
-
-};
+    const handlePassword = (e)=>{
+      e.preventDefault()
+      setShowOtpInput(false)
+      setshowEmail(true)
+    }
+   const handleEmail = (e) =>{
+    e.preventDefault()
+    setPassword(false)
+    setshowEmail(false)
+   }
 
 return (
 
@@ -101,10 +127,13 @@ return (
                 type="email"
                 value={email} onChange={(e) =>setEmail(e.target.value)}
                 id="email"
-                placeholder="Your Email"
-            
+                placeholder="Your Email"          
               />
-            
+            {errors.email && (
+                  <p style={{color: 'red'}}>{errors.email}</p>
+                )}
+
+
             </div>
             <div className="input-group">
               <img
@@ -119,22 +148,24 @@ return (
                 placeholder="Your Password"
 
               />
+              {errors.password && (
+                  <p style={{color: 'red'}}>{errors.password}</p>
+                )}
             </div>
             <div className="remember-forgot">
               <label className="remember">
                 <input type="checkbox" value={rember} onChange={(e) => setRember(e.target.checked)} id="remember" />
                 <span>Remember me</span>
               </label>
-              <a href="#" data-form="forgotForm">
+              <a href="#" onClick={(e)=> {e.preventDefault();setShowForgot(true);}}>
                 Forgot Password?
               </a>
-            </div>
+              
+                </div>
             <button type="submit" className="signup-btn">
               Sign In
             </button>
-            <div className="divider">
-              <span>or continue with</span>
-            </div>
+            
             <button type="button" className="google-btn">
               <img
                 src="https://api.iconify.design/flat-color-icons:google.svg"
@@ -149,6 +180,13 @@ return (
               </Link>
             </p>
           </form>
+                  { showForgot && <Forgotpassword setShowForgot ={setShowForgot} handleSendOtp={handleSendOtp}/>}
+                  {
+                    showOtpInput && <Otpsection setShowForgot={setShowForgot} handlePassword={handlePassword}/>
+                  }
+                  {
+                    showEmail && <EmailRecovery setshowPassword ={setShowForgot} handleEmail={handleEmail}/>
+                  }
         </div>
         <div id="registerForm" className="form">
           <h1>Create Account</h1>
@@ -226,34 +264,7 @@ return (
               </a>
             </p>
           </form>
-        </div>
-        <div id="forgotForm" className="form">
-          <h1>Reset Password</h1>
-          <p className="subtitle">Enter your email to reset your password</p>
-          <form id="resetPasswordForm">
-            <div className="input-group">
-              <img
-                src="https://api.iconify.design/mdi:email-outline.svg"
-                alt="Email"
-                className="input-icon"
-              />
-              <input
-                type="email"
-                id="resetEmail"
-                placeholder="Your Email"
-                
-              />
-            </div>
-            <button type="submit" className="signup-btn">
-              Send Reset Link
-            </button>
-            <p className="login-link">
-              Remember your password?{" "}
-              <a href="#" className="switch-form" data-form="loginForm">
-                Sign In
-              </a>
-            </p>
-          </form>
+        
         </div>
       </div>
   
