@@ -77,8 +77,8 @@ const Login = () => {
           
 
 
-    if (email && password){
-    } else{
+    if (email && password) {
+    }else{
       alert('please fill in both fileds')
     };
 

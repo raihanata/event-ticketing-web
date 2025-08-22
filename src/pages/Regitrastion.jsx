@@ -103,7 +103,7 @@ const Regitrastion = () => {
       try {
 
         const userData = { email, firstname, lastname, password, confirmPassword, selectedoption, selectedcountry, phone: Phone }
-        const res = await axios.post(API_URL, userData).then(res => {
+         await axios.post(API_URL, userData).then(res => {
           console.log(res.data)
 
           toast.success(res.data.message)
