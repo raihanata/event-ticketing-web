@@ -104,7 +104,8 @@ const Regitrastion = () => {
       try {
 
         const userData = { email, firstname, lastname, password, confirmPassword, selectedoption, selectedcountry, phone: Phone }
-        const res = await axios.post(`${SERVER_URL}vc/register`, userData).then(res => {
+        const res = await axios.post(`http://localhost:8000/register`, userData).then(res => {
+              navigate("/login");
           console.log(res.data)
 
           toast.success(res.data.message)
@@ -113,7 +114,7 @@ const Regitrastion = () => {
         })
         //  localStorage.setItem("auth_token",res.data.token);
 
-        navigate("/login");
+    
       } catch (err) {
         if (err.response) {
           setErrors(err.response.data.message);
