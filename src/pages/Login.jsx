@@ -46,6 +46,7 @@ const Login = () => {
         try{
           const res  = await axios.post(API_URL, data).then(res=> {
             console.log(res.data)
+             navigate("/")
           }).catch(err=> {
             console.log(err)
           })
@@ -77,7 +78,6 @@ const Login = () => {
 
 
     if (email && password){
-      // navigate("/")
     } else{
       alert('please fill in both fileds')
     };
