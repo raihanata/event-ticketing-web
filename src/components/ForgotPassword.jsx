@@ -6,7 +6,7 @@ const Forgotpassword = ({setShowForgot,handleSendOtp}) => {
       <div className="popup-overlay">
                         <div className="popup-card">
                           <h2>Find your email</h2>
-                          <p>Enter your recovery email</p>
+                          {/* <p>Enter your recovery email</p> */}
 
                           <form onSubmit={handleSendOtp}>
                             <input
