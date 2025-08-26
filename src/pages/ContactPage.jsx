@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import HeaderTwo from '../components/HeaderTwo';
 import './ContactPage.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { SERVER_URL } from '../lib/url';
 
 const ContactPage = () => {
   const navigate = useNavigate();
@@ -55,9 +57,10 @@ const ContactPage = () => {
   };
 
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     let newErrors = {};
+
 
     Object.keys(formData).forEach((key) => {
       validateField(key, formData[key]);
@@ -69,11 +72,23 @@ const ContactPage = () => {
       return;
     }
 
-    console.log("Form Submitted:", formData);
-    alert("Message sent successfully!");
+     try {
+  
+    const res = await axios.post(`${SERVER_URL}/contact/contactmessage`, formData);
+    console.log(res)
+    if (res.data.success) {
+      alert(res.data.message);
+      setFormData({ name: "", email: "", subject: "", message: "" }); 
+      console.log(setFormData)
+      navigate("/");
+    }
+  } catch (error) {
+    console.error("Error sending message:", error);
+    alert(error.response?.data?.error || "Something went wrong. Please try again.");
+  }
 
+console.log("Form Submitted:", formData);
 
-    navigate("/");
   };
 
   return (
@@ -85,7 +100,7 @@ const ContactPage = () => {
           <div className="div-h2"><h2>Contact Us</h2></div>
 
           <div className="container contact-grid">
-            {/* Left Side Contact Info */}
+            
             <div className="contact-info">
               <div className="contact-header">
                 <h2>Get In Touch</h2>
@@ -117,11 +132,11 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* Right Side Form */}
+          
             <div className="contact-form">
               <h3 className="form-title">Send us a Message</h3>
               <form onSubmit={handleSubmit}>
-                {/* Name */}
+              
                 <div className="form-group">
                   <label htmlFor="name">Your Name</label>
                   <input
@@ -136,7 +151,7 @@ const ContactPage = () => {
                   {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
                 </div>
 
-                {/* Email */}
+              
                 <div className="form-group">
                   <label htmlFor="email">Email Address</label>
                   <input
@@ -151,7 +166,7 @@ const ContactPage = () => {
                   {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
                 </div>
 
-                {/* Subject */}
+                
                 <div className="form-group">
                   <label htmlFor="subject">Subject</label>
                   <input
@@ -166,7 +181,7 @@ const ContactPage = () => {
                   {errors.subject && <p style={{ color: "red" }}>{errors.subject}</p>}
                 </div>
 
-                {/* Message */}
+                
                 <div className="form-group">
                   <label htmlFor="message">Message</label>
                   <textarea
@@ -180,7 +195,7 @@ const ContactPage = () => {
                   {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
                 </div>
 
-                <button type="submit" className="submit-button">
+                <button type="submit" className="submit-button" >
                   Send Message
                 </button>
               </form>
