@@ -4,7 +4,7 @@ import { useEffect } from "react"
 const EventCard = ({ eventData }) => {
 
   useEffect(()=> {
-    console.log(eventData, 'event data')
+    // console.log(eventData, 'event data')
   }, [eventData])
     
   return (
