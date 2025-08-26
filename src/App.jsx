@@ -9,6 +9,8 @@ import Login from './pages/Login'
 import Regitrastion from './pages/Regitrastion'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
+import ContactPage from './pages/ContactPage'
+import Speaker from './pages/Speaker'
 
 function App() {
   // const [count, setCount] = useState(0) 
@@ -22,9 +24,11 @@ function App() {
       <Route path='/blog' element={<BlogPage/>}/>  
       <Route path='/ticket' element={<Ticket/>}/>  
        <Route path='/login' element={<Login/>}/>
-       <Route path='/register' element={<Regitrastion/>}/>
-       <Route path='/Cart' element={<Cart/>}/>
-        <Route path='/checkout' element={<Checkout/>}/>
+      <Route path='/register' element={<Regitrastion/>}/>
+     <Route path='/contact' element={<ContactPage/>}/>
+    <Route path='/speaker' element={<Speaker/>}/>
+    <Route path='/Cart' element={<Cart/>}/>
+     <Route path='/checkout' element={<Checkout/>}/>
      </Routes>
       <Footer/>
      </BrowserRouter>

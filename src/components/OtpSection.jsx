@@ -16,7 +16,9 @@ const[otp,setOtp]=useState("")
 
         <form  onSubmit={handleVerifyotp}>
           <input
-            type="number"
+            type="text"
+            inputMode='numeric'
+            pattern='[0-9]'
             placeholder="OTP"
             value={otp}
             onChange={(e)=> setOtp(e.target.value)}

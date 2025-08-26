@@ -20,7 +20,7 @@ const Header = () => {
                     <li className="navitems"><a href="">Schedule</a></li>
                     <li className="navitems"><a href="">Speakers</a></li>
                     <li className="navitems"><Link to="/ticket">Ticket</Link></li>
-                    <li className="navitems"><a href="">Contact</a></li>
+                    <li className="navitems"><Link to = "/contact">Contact</Link></li>
                     <li><button onClick={loginClick}>Login </button></li>
                 </ul>
 

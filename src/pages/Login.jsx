@@ -41,7 +41,7 @@ const Login = () => {
 
       const handleLogin = async (data) => {
         setErrors('');
-        setLoading('');
+        setLoading(true);
 
         try{
           const res  = await axios.post(API_URL_login, data).then(res=> {
@@ -54,12 +54,12 @@ const Login = () => {
           alert("Loginsucessful!");
         }catch (err){
           if (err.response){
-            setErrors(err.response.data.message || "login falied ");
+            setErrors({api:err.response.data.message || "Invalid credentials "});
           }else{
-            setErrors(err.message);
+            setErrors({api:err.message});
           }
         }finally{
-          setLoading();
+          setLoading(false);
         }
       };
 
@@ -237,7 +237,7 @@ return (
             <button type="submit" className="signup-btn">
               Sign In
             </button>
-            
+            {errors.api&& (<p style={ {color: 'red',marginTop:"10px"}}>{errors.api }</p>)}
             <button type="button" className="google-btn">
               <img
                 src="https://api.iconify.design/flat-color-icons:google.svg"
