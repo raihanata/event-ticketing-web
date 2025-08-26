@@ -14,7 +14,9 @@ const Otpsection = ({ setShowForgot, handleVerifyotp, email }) => {
           <p>Enter your OTP here</p>
           <form onSubmit={handleVerifyotp}>
             <input
-              type="number"
+              type="text"
+              maxLength="6"
+              pattern='\d*'
               placeholder="OTP"
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
