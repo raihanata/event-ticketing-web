@@ -4,6 +4,7 @@ import './Regitrastion.css'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { toast, ToastContainer } from "react-toastify";
+import { SERVER_URL } from "../lib/url";
 const Regitrastion = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('')
@@ -21,7 +22,7 @@ const Regitrastion = () => {
 
 
 
-  const API_URL = "https://event-ticketing-backend-643r.onrender.com/register";
+  // const API_URL = "https://event-ticketing-backend-643r.onrender.com/register";
   const validateForm = () => {
     const newErrors = {};
     if (!firstname.trim()) newErrors.firstname = 'First name is required';
@@ -103,7 +104,7 @@ const Regitrastion = () => {
       try {
 
         const userData = { email, firstname, lastname, password, confirmPassword, selectedoption, selectedcountry, phone: Phone }
-        const res = await axios.post(API_URL, userData).then(res => {
+         await axios.post(`${SERVER_URL}/register`, userData).then(res => {
           console.log(res.data)
 
           toast.success(res.data.message)
