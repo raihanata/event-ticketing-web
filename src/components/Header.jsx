@@ -18,7 +18,7 @@ const Header = () => {
                <div className='logo'><Link to='/'><img src={imgUrl} alt='' /></Link></div>
                 <ul>
                     <li className="navitems"><Link to="/cart">Cart</Link></li>
-                    <li className="navitems"><a href="">Speakers</a></li>
+                    <li className="navitems"><Link to="/speaker">Speakers</Link></li>
                     <li className="navitems"><Link to="/ticket">Ticket</Link></li>
                     <li className="navitems"><Link to = "/contact">Contact</Link></li>
                     <li><button onClick={loginClick}>Login </button></li>
