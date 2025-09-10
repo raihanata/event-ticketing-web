@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { memo } from 'react'
 
-const SpeakerCard = ({speakerData}) => {
-    useEffect(()=>{
-        console.log[speakerData,"speakerData"]
-    },[speakerData])
+const SpeakerCard = memo(({speakerData}) => {
+
+
   return (
     
     <div className="speaker">
@@ -21,9 +20,9 @@ const SpeakerCard = ({speakerData}) => {
             {speakerData.bio}
           </p>
           <div className="speaker-expertise">
-            <span className="expertise-tag">{speakerData.expertise}</span>
-            <span className="expertise-tag">{speakerData.expertise}</span>
-            <span className="expertise-tag">{speakerData.expertise}</span>
+            <span className="expertise-tag">{speakerData.expertise.ai}</span>
+            <span className="expertise-tag">{speakerData.expertise.Leadership}</span>
+            <span className="expertise-tag">{speakerData.expertise.Innovation}</span>
           </div>
           
         </div>
@@ -31,6 +30,6 @@ const SpeakerCard = ({speakerData}) => {
       </div>
     
   )
-}
+})
 
 export default SpeakerCard

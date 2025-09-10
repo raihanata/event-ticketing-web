@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import HeaderTwo from "../components/HeaderTwo";
 import './Cart.css'
 
 
-const ticketData = [
+
+
+export default function Cart() {
+
+  const ticketData = useMemo(()=> [
   { type: "VVIP", price: 200 },
   { type: "VIP", price: 150 },
   { type: "Gold", price: 120 },
   { type: "Silver", price: 100 },
   { type: "Regular", price: 80 },
-];
+  ], [])
 
-export default function Cart() {
   const [quantities, setQuantities] = useState(
     ticketData.reduce((acc, t) => ({ ...acc, [t.type]: 0 }), {})
   );

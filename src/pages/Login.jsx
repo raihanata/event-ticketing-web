@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import HeaderTwo from '../components/HeaderTwo'
 import  { SERVER_URL } from '../lib/url.js'
 import './login.css'
@@ -113,9 +113,7 @@ const Login = () => {
 
 
   }
-  const handleVerifyotp = async (otp, email) => {
-
-
+  const handleVerifyotp = useCallback(async (otp, email) => {
 
     try {
       console.log(email);
@@ -145,7 +143,8 @@ const Login = () => {
       setLoading();
     }
 
-  }
+  }, [])
+
   const handleNewpassword = async (newPassword) => {
     console.log(newPassword);
 
