@@ -21,6 +21,8 @@
 
 .input_field {
   margin-bottom: 15px;
+  position: relative;
+  
 }
 
 .input_field span {
@@ -98,3 +100,7 @@
  .checkbox-container {
    order: 0;
 }
+.toggle{
+  margin-left: 28rem;
+}
+  

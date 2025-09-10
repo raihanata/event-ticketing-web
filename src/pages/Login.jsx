@@ -9,6 +9,9 @@ import Otpsection from '../components/OtpSection'
 import Forgotpassword from '../components/Forgotpassword'
 import EmailRecovery from '../components/EmailRecovery'
 import { toast, ToastContainer } from 'react-toastify'
+import { Eye, EyeOff } from 'lucide-react'
+import GoogleSignIn from '../components/Google.jsx'
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -17,12 +20,20 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState('');
   const [showForgot, setShowForgot] = useState(false);
+  const [isPasswordVisible,setIsPasswordVisible] = useState(false);
+
+
+
+
 
   const [showOtpInput, setShowOtpInput] = useState(false)
 
 
   const [showPassword, setshowPassword] = useState(false);
   const navigate = useNavigate();
+  const togglePasswordVisibility=()=>{
+    setIsPasswordVisible((prev)=>!prev);
+  }
 
   // const API_URL_login = "https://event-ticketing-backend-643r.onrender.com/login";
 
@@ -125,7 +136,7 @@ const Login = () => {
       }).then(res => {
         console.log(res.data)
         setShowOtpInput(false)
-        setshowPassword(true)
+        setIsPasswordVisible(true)
            if (res.data.token) {
         localStorage.setItem("auth_token", res.data.token);
       }
@@ -221,22 +232,29 @@ const Login = () => {
 
 
                 </div>
-                <div className="input-group">
+                <div className="input-group password- group">
                   <img
                     src="https://api.iconify.design/mdi:lock-outline.svg"
                     alt="Password"
                     className="input-icon"
                   />
                   <input
-                    type="password"
+                    type={isPasswordVisible? "text"  : "password"}
                     id="password"
                     value={password} onChange={(e) => setPassword(e.target.value)}
                     placeholder="Your Password"
 
                   />
-                  {errors.password && (
-                    <p style={{ color: 'red' }}>{errors.password}</p>
-                  )}
+                  <span className="toggle-password" onClick={(e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    togglePasswordVisibility()
+                  }}>
+                    {isPasswordVisible? <EyeOff size={20}/>: <Eye size={20}/> }
+                  </span>
+
+                  
+                  
                 </div>
                 <div className="remember-forgot">
                   <label className="remember">
@@ -252,13 +270,8 @@ const Login = () => {
                   Sign In
                 </button>
 
-                <button type="button" className="google-btn">
-                  <img
-                    src="https://api.iconify.design/flat-color-icons:google.svg"
-                    alt="Google"
-                  />
-                  Google
-                </button>
+                <GoogleSignIn/>
+      
                 <p className="login-link">
                   Don't have an account?{" "}
                   <Link to="/register" className="switch-form" data-form="registerForm">
@@ -275,84 +288,7 @@ const Login = () => {
                 showPassword && <EmailRecovery setshowPassword={setShowForgot} handleNewpassword={handleNewpassword} />
               }
             </div>
-            <div id="registerForm" className="form">
-              <h1>Create Account</h1>
-              <p className="subtitle">Sign up to get started</p>
-              <form id="registerFormElement">
-                <div className="input-group">
-                  <img
-                    src="https://api.iconify.design/mdi:account-outline.svg"
-                    alt="Name"
-                    className="input-icon"
-                  />
-                  <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-
-                  />
-                </div>
-                <div className="input-group">
-                  <img
-                    src="https://api.iconify.design/mdi:email-outline.svg"
-                    alt="Email"
-                    className="input-icon"
-                  />
-                  <input
-                    type="email"
-                    id="registerEmail"
-                    placeholder="Your Email"
-                    required=""
-                  />
-                </div>
-                <div className="input-group">
-                  <img
-                    src="https://api.iconify.design/mdi:lock-outline.svg"
-                    alt="Password"
-                    className="input-icon"
-                  />
-                  <input
-                    type="password"
-                    id="registerPassword"
-                    placeholder="Create Password"
-                    required=""
-                  />
-                </div>
-                <div className="input-group">
-                  <img
-                    src="https://api.iconify.design/mdi:lock-check-outline.svg"
-                    alt="Confirm Password"
-                    className="input-icon"
-                  />
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    placeholder="Confirm Password"
-                    required=""
-                  />
-                </div>
-                <button type="submit" className="signup-btn">
-                  Create Account
-                </button>
-                <div className="divider">
-                  <span>or continue with</span>
-                </div>
-                <button type="button" className="google-btn">
-                  <img
-                    src="https://api.iconify.design/flat-color-icons:google.svg"
-                    alt="Google"
-                  />
-                  Google
-                </button>
-                <p className="login-link">
-                  Already have an account?{" "}
-                  <a href="#" className="switch-form" >
-                    Sign In
-                  </a>
-                </p>
-              </form>
-
-            </div>
+            
           </div>
 
 

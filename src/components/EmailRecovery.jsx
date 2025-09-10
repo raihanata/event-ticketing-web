@@ -35,7 +35,7 @@ const EmailRecovery = ({ setShowForgot, handleNewpassword,}) => {
               required
             />
             <div className="btn-group">
-              <button type="button" className="link-btn" onClick={() => setShowForgot(false)}>
+              <button type="button" className="link-btn" onClick={() =>setShowForgot(false)}>
               </button>
               <button type="submit" className="submit-btn" onClick={handleSumbit}>
                 save
