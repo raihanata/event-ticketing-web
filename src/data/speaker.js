@@ -24,7 +24,9 @@ export const speaker =[
   bio:
     "Sarah is a visionary leader with over 15 years of experience in the tech industry. ",
   image: `public/images/party.png`,
-  expertise: ["AI", "Leadership", "Innovation"],
+  expertise: ["AI", 
+    "Leadership",
+     "Innovation"],
 
     },
     

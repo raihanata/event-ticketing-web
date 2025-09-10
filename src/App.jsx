@@ -11,27 +11,31 @@ import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import ContactPage from './pages/ContactPage'
 import Speaker from './pages/Speaker'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import Google from './components/Google'
 
 function App() {
   // const [count, setCount] = useState(0) 
 
   return (
     <>
-     <BrowserRouter>
-      <Header/>
-     <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/blog' element={<BlogPage/>}/>  
-      <Route path='/ticket' element={<Ticket/>}/>  
-       <Route path='/login' element={<Login/>}/>
-      <Route path='/register' element={<Regitrastion/>}/>
-     <Route path='/contact' element={<ContactPage/>}/>
-    <Route path='/speaker' element={<Speaker/>}/>
-    <Route path='/Cart' element={<Cart/>}/>
-     <Route path='/checkout' element={<Checkout/>}/>
-     </Routes>
-      <Footer/>
-     </BrowserRouter>
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+      <BrowserRouter>
+        <Header/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/blog' element={<BlogPage/>}/>  
+          <Route path='/ticket' element={<Ticket/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Regitrastion/>}/>
+          <Route path='/contact' element={<ContactPage/>}/>
+          <Route path='/speaker' element={<Speaker/>}/>
+          <Route path='/Cart' element={<Cart/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
+     </GoogleOAuthProvider>
     </>
     
   )

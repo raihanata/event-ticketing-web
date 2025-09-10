@@ -8,9 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 export const Blog = () => {
   const navigate = useNavigate();
 
-      const handleClick = () => {
-        navigate('blog/'); 
-      };
+      const handleClick = () => navigate('blog/'); 
+
 
   return (
     <section id='Blog'>
@@ -26,23 +25,12 @@ export const Blog = () => {
             <div className='div-image'>
                 {
                 blogs.map(item=>   <BlogEvent blogData={item}/>)
-                 }
-
-                
+                }
             </div>
-
                 <div className='learn'>
                     <button className='more' onClick={handleClick }>Load More</button>
                     <Link to='/blog'/>
                 </div>
-
-
-
-
-
-
-
-
         </div> 
     </div>
 

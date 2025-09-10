@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { toast, ToastContainer } from "react-toastify";
 import { SERVER_URL } from "../lib/url";
+import { Eye, EyeOff } from "lucide-react";
 const Regitrastion = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('')
@@ -18,6 +19,11 @@ const Regitrastion = () => {
   // const [isChecked, setIsChecked] = useState();
   // const [isChecked1, setIsChecked1] = useState();
   const [Phone, setPhone] = useState('');
+
+  const[isPasswordVisible,setIsPasswordVisible] = useState(false)
+      const togglePasswordVisibility= ()=>{
+        setIsPasswordVisible((prev)=>!prev);
+      }
 
 
 
@@ -150,7 +156,18 @@ const Regitrastion = () => {
                 </div>
                 <div className="input_field">
                   <span><i className="fa fa-lock"></i></span>
-                  <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                  <input type={isPasswordVisible? "text" :"password" } value={password} onChange={(e) => setPassword(e.target.value)} 
+                  placeholder="Password" 
+                  />
+                  <span className="toggle" onClick={(e)=>{
+                    e.preventDefault ();
+                    e.stopPropagation();
+                    togglePasswordVisibility()
+                  }}>
+                     
+                    {isPasswordVisible ? <EyeOff size={20} />:<Eye size={20} />}
+                       
+                  </span>
                   {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>}
                 </div>
                 <div className="input_field">

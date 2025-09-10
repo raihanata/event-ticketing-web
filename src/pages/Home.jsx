@@ -15,7 +15,7 @@ const Home = () => {
       <SearchEvent />
       <UpcomingEvents />
       <MakeEvent/>
-       <Brand/>
+      <Brand/>
       <Blog/>  
     </>
   )
